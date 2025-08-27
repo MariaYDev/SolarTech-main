@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          
             $_SESSION['userid'] = $row['id'];
             $_SESSION['role'] = $row['role'];
-
+            $_SESSION['email'] = $row['email'];
      
             if ($row['role'] == 'user') {
                 header("Location: user_page.php");

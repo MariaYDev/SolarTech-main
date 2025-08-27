@@ -278,7 +278,7 @@ If you have any questions regarding your order or need further assistance, pleas
 <br> Best regards,<br> Solar Tech team,';
 
 echo $message;
-$email = $_POST['Email'];
+$email = $_SESSION['email'];
 echo $email;
 if ($message != '') {
     try {
@@ -292,7 +292,7 @@ if ($message != '') {
         $mail->Port       = 587; // Port for TLS encryption
 
         $mail->setFrom('solartech.inform@gmail.com');
-        $mail->addAddress($_SESSION['Email']);
+        $mail->addAddress($email);
 
         $mail->isHTML(true);
         $mail->Subject = "Order Confirmation";
