@@ -1,0 +1,79 @@
+*{ 
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        Font-family: Poppins, sans-serif;
+  }
+  .container  .logreg-box { 
+        Position: absolute;
+        Top: 0;
+        Right: 120px;
+        Width: calc(100% - 58%);
+        Height: 100%;
+
+  }
+
+  .form-box{padding-right:100%}
+  .logreg-box  .form-box {
+    
+        Display : flex;
+        Justify-content: center;
+        Align-items: center;
+        Width: 100%;
+        Height: 100%;
+        Background: transparent;
+        Border-top-right-radius: 10px;
+        Border-bottom-right-radius: 10px;
+        Color: #858585;
+  }
+.form-box .input-box {
+    Position: relative;
+    Width: 340px;
+    Height: 50px;
+    Border-bottom: 2px solid #858585;
+    Margin: 30px 0;
+}
+  .input-box  input {
+        Width: 100%;
+        Height: 100%:
+        Background: transparent;
+        Border: none;
+        Outline: none;
+        Font-size : 16px;
+        Color: #e4e4e4;
+        Font-weight: 500;
+        Padding-right: 28px;
+  }
+  .input-box   label  {
+        Position: absolute;
+        Top: 50%;
+        Left: 0;
+        Transform: translateY(-50%);
+        Font-size :16px;
+        Font-weight: 500;
+        Pointer-events: none;
+        Transition: .5s ease;
+  }
+  .input-box   input:focus~label,
+  .input-box   input:valid~label {
+         Top: -5px;
+  }
+  .input-box   .icon {
+          Position: absolute;
+          Top: 13px;
+          Right: 0;
+          Font-size: 19px;
+  }
+  .btn {
+          Width: 100%;
+          Height: 45px;
+          Background: #1200ff;
+          Border:none;
+          Outline: none;
+          Border-radius: 4px;
+          Cursor: pointer;
+          Font-size: 16px;
+          Color: #e4e4e4;
+          Font-weight: 500;
+          Box-shadow: 0 0 10px rgba(0 , 0 , 0,  .5);
+  } 
