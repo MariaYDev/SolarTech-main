@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -218,7 +219,6 @@
 
 
 <?php
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -227,7 +227,7 @@ require 'PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/src/SMTP.php';
 require 'index.php';
 
-$conn = mysqli_connect("localhost", "root", "", "web3proj-test");
+$conn = mysqli_connect("localhost", "root", "", "web3proj");
 
 $query6 = "SELECT * FROM invoice ORDER BY id DESC LIMIT 3";
 $result6 = mysqli_query($conn, $query6);
@@ -278,6 +278,8 @@ If you have any questions regarding your order or need further assistance, pleas
 <br> Best regards,<br> Solar Tech team,';
 
 echo $message;
+$email = $_POST['Email'];
+echo $email;
 if ($message != '') {
     try {
         $mail = new PHPMailer(true);
@@ -290,7 +292,7 @@ if ($message != '') {
         $mail->Port       = 587; // Port for TLS encryption
 
         $mail->setFrom('solartech.inform@gmail.com');
-        $mail->addAddress('mariayoussef61@gmail.com');
+        $mail->addAddress($_SESSION['Email']);
 
         $mail->isHTML(true);
         $mail->Subject = "Order Confirmation";
