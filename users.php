@@ -8,17 +8,19 @@ if (!isset($_SESSION['userid']) || !isset($_SESSION['role']) || $_SESSION['role'
 }
 
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "web3proj";
+$conn = mysqli_connect(
+    "bwfklj7lgile0zzdf6mq-mysql.services.clever-cloud.com", 
+    "umwekpqauqifmfeg",                                     
+    "yourPasswordHere",                                      
+    "bwfklj7lgile0zzdf6mq",                                  
+    3306                                                     
+);
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+} 
 
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 $sql = "SELECT * FROM users";
 $result = $conn->query($sql);

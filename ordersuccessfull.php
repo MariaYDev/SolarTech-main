@@ -227,7 +227,19 @@ require 'PHPMailer-master/src/PHPMailer.php';
 require 'PHPMailer-master/src/SMTP.php';
 require 'index.php';
 
-$conn = mysqli_connect("localhost", "root", "", "web3proj");
+$conn = mysqli_connect(
+    "bwfklj7lgile0zzdf6mq-mysql.services.clever-cloud.com", 
+    "umwekpqauqifmfeg",                        
+    "yourPasswordHere",                                      
+    "bwfklj7lgile0zzdf6mq",                                  
+    3306                                                     
+);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+} 
+
 
 $query6 = "SELECT * FROM invoice ORDER BY id DESC LIMIT 3";
 $result6 = mysqli_query($conn, $query6);

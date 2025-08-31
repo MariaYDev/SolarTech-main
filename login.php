@@ -5,8 +5,13 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 
-$conn = mysqli_connect("localhost", "root", "", "web3proj");
-
+$conn = mysqli_connect(
+    "bwfklj7lgile0zzdf6mq-mysql.services.clever-cloud.com", 
+    "umwekpqauqifmfeg",                                     
+    "yourPasswordHere",                                      
+    "bwfklj7lgile0zzdf6mq",                                  
+    3306                                                     
+);
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());

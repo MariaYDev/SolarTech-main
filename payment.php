@@ -1,9 +1,18 @@
 <?php session_start();
 require 'index.php';
-$conn = mysqli_connect("localhost", "root", "", "web3proj");
-if (isset($_POST["radio1"]) && $_POST["radio1"] == "cash on deliv") {
-    header("location:ordersuccessfull.html");
-} ?>
+$conn = mysqli_connect(
+    "bwfklj7lgile0zzdf6mq-mysql.services.clever-cloud.com", 
+    "umwekpqauqifmfeg",                                     
+    "yourPasswordHere",                                      
+    "bwfklj7lgile0zzdf6mq",                                  
+    3306                                                     
+);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+} 
+ ?>
 
 <!DOCTYPE html>
 

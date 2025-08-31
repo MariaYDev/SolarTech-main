@@ -2,18 +2,18 @@
 session_start();
 
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "login_system";
+$conn = mysqli_connect(
+    "bwfklj7lgile0zzdf6mq-mysql.services.clever-cloud.com", 
+    "umwekpqauqifmfeg",                                     
+    "yourPasswordHere",                                      
+    "bwfklj7lgile0zzdf6mq",                                  
+    3306                                                     
+);
 
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+} 
 
 $row = []; 
 
